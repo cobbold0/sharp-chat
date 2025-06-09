@@ -1,0 +1,10 @@
+<resources>
+    <declare-styleable name="SharpChatActionBar">
+        <attr name="title" format="string"/>
+        <attr name="showBackButton" format="boolean" />
+        <attr name="showSearch" format="boolean" />
+        <attr name="showCallButton" format="boolean" />
+        <attr name="showSettings" format="boolean" />
+        <attr name="showMenu" format="boolean" />
+    </declare-styleable>
+</resources>

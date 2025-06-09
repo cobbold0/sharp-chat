@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/chatsFragment">
+
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="com.vortexen.sharpchat.ui.fragments.ChatsFragment"
+        android:label="fragment_chats"
+        tools:layout="@layout/fragment_chats">
+        <action
+            android:id="@+id/chatsFragment_to_contactListFragment"
+            app:destination="@id/contactListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/contactListFragment"
+        android:name="com.vortexen.sharpchat.ui.fragments.ContactListFragment"
+        android:label="fragment_contact_list"
+        tools:layout="@layout/fragment_contact_list">
+        <action
+            android:id="@+id/contactListFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.vortexen.sharpchat.ui.fragments.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="contact"
+            app:argType="com.vortexen.sharpchat.data.model.ContactSuggestion"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>

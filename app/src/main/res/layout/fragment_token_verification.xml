@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".ui.fragments.TokenVerificationFragment">
+
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/enter_verification_code"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:text="@string/we_sent_a_6_digit_code_to_your_phone"
+        android:textColor="#6B7280"
+        android:textSize="16sp" />
+
+    <!-- Token Input Fields -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:weightSum="6">
+
+        <EditText
+            android:id="@+id/token1"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/token_input_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#111827"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/token2"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/token_input_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#111827"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/token3"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/token_input_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#111827"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/token4"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/token_input_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#111827"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/token5"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/token_input_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#111827"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/token6"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:background="@drawable/token_input_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#111827"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Verify Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/verifyButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/verify"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- Resend Code -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/didn_t_receive_code"
+            android:textColor="#6B7280"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/resendCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="4dp"
+            android:text="@string/resend"
+            android:textColor="?attr/colorTertiary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

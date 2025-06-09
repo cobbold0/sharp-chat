@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.SignUpFragment">
+
+    <ImageView
+        android:id="@+id/hero_sec"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/connect_with_friends"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hero_sec" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/join_sharp_chat_to_start_chatting_with_your_friends"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="@string/full_name"
+        app:layout_constraintTop_toBottomOf="@id/description">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_input"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="@string/email"
+        app:layout_constraintTop_toBottomOf="@id/name_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_input"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="@string/password"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout_phoneNumber">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_input"
+            android:layout_width="match_parent"
+            android:inputType="textPassword"
+            android:layout_height="50dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_phoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_outline"
+        android:hint="@string/phone_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/empty"
+                android:paddingTop="5dp"
+                app:ccpDialog_textColor="?attr/colorOnSurface"
+                app:ccp_autoDetectCountry="true" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_carrierNumber"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continue_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:enabled="false"
+        android:text="@string/continue_btn_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_layout" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/continue_btn">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/do_you_have_an_account"
+            android:textColor="#6B7280"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/to_login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="4dp"
+            android:text="@string/login"
+            android:textColor="?attr/colorTertiary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/by_continuing_you_agree_to_our_terms_of_service_and_privacy_policy"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

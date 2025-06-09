@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.fragments.ChatFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.vortexen.sharpchat.ui.views.SharpChatActionBar
+            android:id="@+id/sharpChatActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
+            android:translationZ="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showBackButton="true"
+            app:showSearch="false"
+            app:showSettings="true"
+            app:title="Chat" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_messages"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:paddingTop="20dp"
+            android:paddingBottom="80dp"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sharpChatActionBar" />
+
+        <LinearLayout
+            android:id="@+id/edit_text_layout"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/bg_chat_input"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_send"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/edit_text_message"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/empty"
+                android:hint="@string/type_a_message"
+                android:imeOptions="actionSend"
+                android:importantForAutofill="no"
+                android:inputType="text" />
+
+            <ImageButton
+                android:id="@+id/button_camera"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="5dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/send_message"
+                android:src="@drawable/ic_camera"
+                app:tint="?attr/colorOnSurfaceVariant" />
+
+            <ImageButton
+                android:id="@+id/button_mic"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="5dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/send_message"
+                android:src="@drawable/ic_mic"
+                app:tint="?attr/colorOnSurfaceVariant" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_send"
+            style="?attr/materialIconButtonFilledTonalStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+            android:contentDescription="@string/send_message"
+            android:gravity="center"
+            app:icon="@drawable/ic_send"
+            app:layout_constraintBottom_toBottomOf="@id/edit_text_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/edit_text_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

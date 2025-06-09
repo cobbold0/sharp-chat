@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.ContactListFragment">
+
+    <com.vortexen.sharpchat.ui.views.SharpChatActionBar
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="?attr/colorSurface"
+        app:showBackButton="true"
+        app:showSearch="true"
+        app:title="New Message"
+        android:translationZ="1dp"
+        />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contacts_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:clipToPadding="false"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="80dp"
+            android:paddingBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/action_bar" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <include
+        android:id="@+id/emptyStateView"
+        layout="@layout/layout_contact_list_empty_state" />
+
+    <include
+        android:id="@+id/errorStateView"
+        layout="@layout/layout_contact_list_error_state" />
+
+</FrameLayout>
